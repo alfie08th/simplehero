@@ -9,16 +9,16 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 <link rel="stylesheet" href="/simplehero/newDesign/styles.96117718144665ad2957.css"></head>
 <body>
-  <h1>Hello World</h1>
+  <h1>Hello New World</h1>
   <script>
     var myEvent = window.attachEvent || window.addEventListener;
-    var checkEvent = window.attachEvent ? 'onbeforeunload' : 'beforeunload';
-    
-    myEvent(checkEvent, function(e) {
-      var confirmationMessage = 'Are you sure, you want to close the ribbon browser?';
-      (e || window.event).returnValue = confirmationMessage;
-      return confirmationMessage;
-    });
+    var chkevent = window.attachEvent ? 'onbeforeunload' : 'beforeunload'; /// make IE7, IE8 compitable
+
+    myEvent(chkevent, function(e) { // For >=IE7, Chrome, Firefox
+        var confirmationMessage = 'Are you sure to leave the page?';  // a space
+        (e || window.event).returnValue = confirmationMessage;
+        return confirmationMessage;
+    }); 
     </script>
 <!--   <app-root></app-root> -->
 <!--  <script src="/simplehero/newDesign/runtime.26209474bfa8dc87a77c.js" nomodule defer></script>-->
