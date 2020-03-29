@@ -15,7 +15,7 @@
     var checkEvent = window.attachEvent ? 'onbeforeunload' : 'beforeunload';
     
     myEvent(checkEvent, function(e) {
-      var confirmationMessage = "Are you sure, you want to close the ribbon browser?';
+      var confirmationMessage = 'Are you sure, you want to close the ribbon browser?';
       (e || window.event).returnValue = confirmationMessage;
       return confirmationMessage;
     });
